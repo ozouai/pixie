@@ -119,6 +119,14 @@ class Connection
     }
 
     /**
+     * Destroys the PDO Object
+     */
+    public function destroyPdoInstance() {
+        $this->pdoInstance = null;
+        return $this;
+    }
+
+    /**
      * @param $adapter
      *
      * @return $this
