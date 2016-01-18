@@ -118,7 +118,15 @@ class QueryBuilderHandler
 
         return new static($connection);
     }
-
+    /**
+     * Destroys the PDO object
+     * @return QueryBuilderHandler
+     */
+    public function destroyPdoInstance() {
+        $this->pdo = null;
+        $this->connection->destroyPdoInstance();
+        return $this;
+    }
     /**
      * @param       $sql
      * @param array $bindings
